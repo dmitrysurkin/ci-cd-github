@@ -12,7 +12,7 @@ jobs:
     steps: #Шаги
       - uses: actions/checkout@v2 #Какой гитхаб экшен использовать
       - name: Install NVM
-        run: curl -o-  https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | curl #Сейчас будем что то запускать
+        run: curl -o-  https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash #Сейчас будем что то запускать
       - name: Install NodeJS
         env: 
           NODE_VERSION: 14.17.4
@@ -22,4 +22,4 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Lint source code with eslint
-        run: npm run lint
+        run: npm run linter
