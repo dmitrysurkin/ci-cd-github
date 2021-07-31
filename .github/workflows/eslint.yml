@@ -1,0 +1,25 @@
+name: eslint #Название джобы, оно будет отображено в списке на гитхабе
+
+on: #Правила для работы workflow
+  push: #Когда идёт новый пуш в ветку main
+    branches: [master]
+  pull_request: #Когда добавляется pull_request в ветку main
+    branches: [master]
+
+jobs:
+  eslint: #Название джобы
+    runs-on: ubuntu-latest #Окружение. Имя докер образа
+    steps: #Шаги
+      - uses: actions/checkout@v2 #Какой гитхаб экшен использовать
+      - name: Install NVM
+        run: curl -o-  https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | curl #Сейчас будем что то запускать
+      - name: Install NodeJS
+        env: 
+          NODE_VERSION: 14.17.4
+        run: nvm install $NODE_VERSION
+      - name: Checkout directory
+        run: cd apps/main
+      - name: Install Dependencies
+        run: npm install
+      - name: Lint source code with eslint
+        run: npm run lint
