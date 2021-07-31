@@ -6,10 +6,9 @@ cache:
     files:
       - package-lock.json #При изменения в этом файле будет создаваться заново кеш
   path:
-      - apps/main/node_modules #Какой путь кешировать
+    - apps/main/node_modules #Какой путь кешировать
 
-# Надо как то использовать кеш
-before_script:
+before_script: # Надо как то использовать кеш
   - cd apps/main
   - npm ci --cache node_modules --prefer-offline
 
