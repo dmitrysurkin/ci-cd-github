@@ -1,6 +1,17 @@
 stages:
   - lint
 
+# Надо как то использовать кеш
+before_script:
+  - cd apps/main npm ci --cache node_modules --prefer-offline
+
+cache:
+  key:
+    files:
+      - package-lock.json #При изменения в этом файле будет создаваться заново кеш
+  path:
+      - apps/main/node_modules #Какой путь кешировать
+
 eslint:
   image: node:14.17.0-alpine
   stage: lint
