@@ -9,7 +9,6 @@ cache:
     - apps/main/node_modules #Какой путь кешировать
 
 before_script: # Надо как то использовать кеш
-  - cd apps/main
   - npm ci --cache node_modules --prefer-offline
 
 eslint:
