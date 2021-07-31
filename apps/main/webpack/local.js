@@ -3,7 +3,7 @@ const merge = require('webpack-merge');
 const base = require('./base');
 const {
     port = 8080,
-    backend = 'http://eaist-demo1.proitr.ru/'
+    backend = 'http://eaist-demo2.proitr.ru/'
 } = require('minimist')(process.argv.slice(2));
 
 module.exports = merge(base, {
@@ -13,7 +13,7 @@ module.exports = merge(base, {
         historyApiFallback: {
             rewrites: [
                 {
-                    from: /.*/, to: '/module/arm-grbs/static/',
+                    from: /.*/, to: '/module/nsi/static/'
                 },
             ],
         },
@@ -23,19 +23,19 @@ module.exports = merge(base, {
         port: port,
         overlay: {
             warnings: false,
-            errors: true,
+            errors: true
         },
-        publicPath: '/module/arm-grbs/static/',
+        publicPath: '/module/nsi/static/',
         proxy: {
-            '/module/arm-grbs/static/apps/**': {
+            '/module/nsi/static/apps/**': {
                 target: backend,
                 secure: false,
-                changeOrigin: true,
+                changeOrigin: true
             },
-            '!/module/arm-grbs/static/**': {
+            '!/module/nsi/static/**': {
                 target: backend,
                 secure: false,
-                changeOrigin: true,
+                changeOrigin: true
             }
         },
         watchOptions: {
@@ -45,6 +45,6 @@ module.exports = merge(base, {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
             'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
-        },
-    },
+        }
+    }
 });

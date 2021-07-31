@@ -1,28 +1,19 @@
-import {connect} from 'react-redux';
 import {withRouter, Switch, Route, Redirect} from 'react-router-dom';
 import content from './content.jsx';
-import connector from './connector';
 
-import {Loader} from '@dots-java/adapters/react/loader';
+import Reference from './components/reference';
+import Classifier from './components/classifier';
+import NsiSettings from './components/nsi-settings';
+import ReferenceKpgzSpgz from './components/referenceKpgzSpgz';
+import Participants from './components/participants';
 
-import Finance from './components/finance';
-import PlanCoordination from './components/planCoordination';
-import Purchases from './components/purchases';
-import SectorAgreement from './components/sectorAgreement';
-import ContractCoordination from './components/contractCoordination';
-import Bids from './components/bids';
-import Settings from './components/settings';
-
-export default withRouter(connect(connector, null)(content({
+export default withRouter(content({
     Switch,
     Route,
     Redirect,
-    Loader,
-    Finance,
-    PlanCoordination,
-    Purchases,
-    SectorAgreement,
-    ContractCoordination,
-    Bids,
-    Settings,
-})));
+    Reference,
+    Classifier,
+    NsiSettings,
+    ReferenceKpgzSpgz,
+    Participants
+}));

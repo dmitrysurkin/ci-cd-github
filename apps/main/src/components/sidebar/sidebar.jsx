@@ -1,144 +1,233 @@
 import React from 'react';
 
-const _Sidebar = ({
-    Sidebar,
-    Tab,
+const Sidebar = ({
+    E2Sidebar,
+    Tab
 }) => ({
-    year,
     history,
-    location,
+    location
 }) => {
     return (
-        <Sidebar
-            data-test-id="Сайдбар"
+        <E2Sidebar
             selected={location.pathname}
-            root="/module/arm-grbs/static"
+            root="/module/nsi/static"
             onSelect={history.push}>
             <Tab
-                title="Финансирование"
-                value="/finance">
+                title="Классификатор товаров, работ и услуг">
             </Tab>
             <Tab
-                title="Планирование"
-                value="/plan-coordination">
-                {year < 2020 && (
-                    <Tab
-                        title="Планы закупок"
-                        value="/purchase-plan">
-                        <Tab
-                            title="Согласованные"
-                            value="/coordinated">
-                        </Tab> 
-                    </Tab>
-                )}
+                title="Справочник КПГЗ / СПГЗ"
+                value="/referenceKpgzSpgz">
                 <Tab
-                    title="Планы-графики"
-                    value="/schedule-plan">
+                    title="КПГЗ"
+                    value="/kpgz/" />
+                <Tab
+                    title="СПГЗ"
+                    value="/spgz/" />
+                <Tab
+                    title="Справочник инновационной продукции"
+                    value="/innovativeProductions" >
                     <Tab
-                        title="На согласовании"
-                        value="/coordination">
-                    </Tab> 
+                        title="Группы СПГЗ"
+                        value="/groups/" />
                     <Tab
-                        title="К корректировке"
-                        value="/corrections">
-                    </Tab> 
-                    <Tab
-                        title="Согласованные"
-                        value="/coordinated">
-                    </Tab> 
+                        title="СПГЗ"
+                        value="/search/" />
                 </Tab>
                 <Tab
-                    title="Лоты"
-                    value="/lot-coordination">
-                    <Tab
-                        title="На согласовании"
-                        value="/coordination">
-                    </Tab> 
-                    <Tab
-                        title="Выданы замечания"
-                        value="/corrections">
-                    </Tab> 
-                    <Tab
-                        title="Согласованные"
-                        value="/coordinated">
-                    </Tab>  
-                    <Tab
-                        title="Отклоненные"
-                        value="/rejected">
-                    </Tab>  
-                </Tab>
+                    title="СПГЗ требующие нормирования"
+                    value="/spgzNeedNormalized" />
+                <Tab
+                    title="Перекодировочная таблица ЕИС"
+                    value="/emiasconvertion" />
+                <Tab
+                    title="Характеристики"
+                    value="/characteristic" />
+                <Tab
+                    title="Товары"
+                    value="/nsiGoods/" />
+                <Tab
+                    title="КТРУ"
+                    value="/ktru/" />
+                <Tab
+                    title="Перекодировочная таблица СПГЗ/КТРУ"
+                    value="/ktruConversion" />
+                <Tab
+                    title="Запрещенные КПГЗ"
+                    value="/bannedKpgz/" />                
             </Tab>
             <Tab
-                title="Закупки"
-                value="/purchases">
+                title="Участники"
+                value="/participants">
                 <Tab
-                    title="Заседания РГ ГРБС"
-                    value="/meetings-rg-grbs"/>
+                    title="Заказчики"
+                    value="/participantCustomer/" />
                 <Tab
-                    title="Заявки"
-                    value="/bids"/>
+                    title="Поставщики"
+                    value="/participantSupplier/" />
                 <Tab
-                    title="Исправление замечаний"
-                    value="/correction-remarks"/>
+                    title="Уполномоченные органы или учреждения"
+                    value="/participantAuthority/" />
+                <Tab
+                    title="Специализированные организации"
+                    value="/participantSpecial/" />
+                <Tab
+                    title="Контрольные органы в сфере закупок"
+                    value="/participantController/" />
+                <Tab
+                    title="Регулирующие органы исполнительной власти"
+                    value="/participantRegulator/" />
+                <Tab
+                    title="Эксперты"
+                    value="/participantExpert/" />
+                <Tab
+                    title="ГРБС"
+                    value="/participantGrbs/" />
             </Tab>
             <Tab
-                title="Отраслевое согласование"
-                value="/sector-agreement">
+                title="Справочники"
+                value="/reference">
+                <Tab
+                    title="Торговая площадка"
+                    value="/tradingPlatform"/>
+                <Tab
+                    title="Тип учреждений"
+                    value="/institutionType"/>
+                <Tab
+                    title="Показатели рейтинга эффективности заказчиков"
+                    value="/customerRating"/>
+                <Tab
+                    title="Периодичность поставки"
+                    value="/periodicity"/>
+                <Tab
+                    title="Амортизация групп"
+                    value="/amortizationGroup"/>
+                <Tab
+                    title="Причины изменения планов"
+                    value="/changeReason"/>
+                <Tab
+                    title="Справочник выходных и праздничных дней"
+                    value="/holidayException"/>
+                <Tab
+                    title="Рубрикатор НПСИ"
+                    value="/documentRubricator"/>
+                <Tab
+                    title="Справочник докумуентов НПСИ"
+                    value="/referenceDocument"/>
+                <Tab
+                    title="Справочник внешних ресурсов НПСИ"
+                    value="/externalResource"/>
+                <Tab
+                    title="Справочник должностей"
+                    value="/position"/>
+                <Tab
+                    title="Справочник типов регулирующих документов"
+                    value="/normativSource"/>
+                <Tab
+                    title="Справочник признаков лотов"
+                    value="/lotAttribute"/>
+                <Tab
+                    title="Справочник причин отказов"
+                    value="/rejectReason"/>
+                <Tab
+                    title="Справочник ЕСЛП"
+                    value="/eslp"/>
+                <Tab
+                    title="Государственные программы"
+                    value="/governmentProgram"/>
+                <Tab
+                    title="Справочник ОКПД2, относящихся к Лекарственным препаратам"
+                    value="/okpd2drugs"/>
+                <Tab
+                    title="Справочник источников финансирования АИС СИ"
+                    value="/aisSiEaistFund"/>
+                <Tab
+                    title="Справочник адресообразующих элементов"
+                    value="/addressDictionary"/>
+                <Tab
+                    title="Внешние системы заказчика"
+                    value="/customerSystem"/>
+                <Tab
+                    title="Справочник видов документов"
+                    value="/npaDocumentTypeReference"/>
+                <Tab
+                    title="Справочник настроек возможности неиспользования типовой документации для 223-ФЗ"
+                    value="/typicalDocumentationSetting"/>
             </Tab>
             <Tab
-                title="Контракты и договоры"
-                value="/contract-coordination">
+                title="Классификаторы"
+                value="/classifier">
                 <Tab
-                    title="Заключение контрактов"
-                    value="/coordination"/>
+                    title="КОСГУ"
+                    value="/kosgu"/>
                 <Tab
-                    title="Дополнительные соглашения"
-                    value="/additionalAgreements"/>
+                    title="ОКАТО"
+                    value="/okato"/>
                 <Tab
-                    title="Согласованные"
-                    value="/agreed"/>
-            </Tab>
-            <Tab
-                title="Заявки"
-                value="/bids">
+                    title="ОКВЭД-2"
+                    value="/okved/"/>
                 <Tab
-                    title="Заявки на МРГ"
-                    value="/rg-mrg-coordination"/>
+                    title="ОКДП"
+                    value="/okdp"/>
                 <Tab
-                    title="Заявки на экспертизу НМЦ"
-                    value="/nmc-examination-claims"/>
+                    title="ОКЕИ"
+                    value="/okei"/>
                 <Tab
-                    title="Отраслевое согласование"
-                    value="/lots-oiv-coordination"/>
+                    title="ОКВ"
+                    value="/okv/"/>
                 <Tab
-                    title="Заявки 1 уровня"
-                    value="/first-level"/>
+                    title="ОКОГУ"
+                    value="/okogu"/>
                 <Tab
-                    title="Заявки 2 уровня"
-                    value="/second-level"/>
+                    title="ОКОПФ"
+                    value="/okopf"/>
+                <Tab
+                    title="ОКПД"
+                    value="/okpd/"/>
+                <Tab
+                    title="ОКПД-2"
+                    value="/okpd2/"/>
+                <Tab
+                    title="ОКСМ"
+                    value="/oksm"/>
+                <Tab
+                    title="ОКТМО"
+                    value="/oktmo"/>
+                <Tab
+                    title="ОКФС"
+                    value="/okfs"/>
+                <Tab
+                    title="МЭР"
+                    value="/merCode"/>
             </Tab>
             <Tab
                 title="Настройки"
-                value="/settings">
+                value="/nsi-settings">
                 <Tab
-                    title="Общие"
-                    value="/general"/>
-                <Tab
-                    title="44-ФЗ"
-                    value="/44fz"/>
-                <Tab
-                    title="223-ФЗ"
-                    value="/223fz">
+                    title="Реестр исключений закупок у СМП, СОНО"
+                    value="/exceptionRegistrySmp">
                     <Tab
-                        title="Настройки согласования"
-                        value="/agreement"/>
+                        title="КПГЗ"
+                        value="/kpgz"/>
                     <Tab
-                        title="Настройки централизации"
-                        value="/centralization"/>
+                        title="СПГЗ"
+                        value="/spgz"/>
+                    <Tab
+                        title="Организации"
+                        value="/participant"/>
                 </Tab>
+                <Tab
+                    title="Настройки согласования закупок"
+                    value="/purchaseAgreement"/>
+                <Tab
+                    title="КПГЗ, предусматривающие превышение аванса над исполнением контрактов"
+                    value="/prepaymentExcess"/>
+                <Tab
+                    title="Перечень КПГЗ/СПГЗ по строительным работам"
+                    value="/buildingSubjects"/>
             </Tab>
-        </Sidebar>
+        </E2Sidebar>
     );
 };
 
-export default _Sidebar;
+export default Sidebar;

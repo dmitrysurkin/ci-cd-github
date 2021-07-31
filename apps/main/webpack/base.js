@@ -1,8 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const {
-    mode = 'production',
+    mode = 'production'
 } = require('minimist')(process.argv.slice(2));
 
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
     entry: './index.js',
     output: {
         path: path.join(__dirname, '..', '..', '..', 'build'),
-        filename: '[name].js',
+        filename: '[name].js'
     },
     resolve: {
         modules: ['node_modules'],
@@ -19,16 +20,16 @@ module.exports = {
             'WebComponent': path.join(__dirname, '..', 'src', 'wrappers'),
             'Component': path.join(__dirname, '..', 'src', 'components'),
             'Action': path.join(__dirname, '..', 'src', 'actions'),
-            'Api': path.join(__dirname, '..', 'src', 'apis'),
+            'Api': path.join(__dirname, '..', 'src', 'apis')
         }
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './index.html'
         }),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
-            MODE: JSON.stringify(mode),
+            MODE: JSON.stringify(mode)
         }),
     ],
     module: {
@@ -45,10 +46,10 @@ module.exports = {
                     ],
                     plugins: [
                         '@babel/plugin-transform-runtime',
-                        ['@babel/plugin-proposal-decorators', {decoratorsBeforeExport: true}],
-                    ],
-                },
-            },
-        ],
-    },
+                        ['@babel/plugin-proposal-decorators', {decoratorsBeforeExport: true}]
+                    ]
+                }
+            }
+        ]
+    }
 };

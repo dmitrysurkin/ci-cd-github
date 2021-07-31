@@ -1,7 +1,6 @@
-import {combineReducers} from 'redux';
-
-import context from 'Component/context/reducer';
-
-export default combineReducers({
-    context,
-});
+export default (state = {}, {type}) => {
+    switch (type) {
+        default:
+            return state;
+    }
+};

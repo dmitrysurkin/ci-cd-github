@@ -1,11 +1,8 @@
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router';
 import sidebar from './sidebar.jsx';
-import connector from './connector';
+import E2Sidebar from 'WebComponent/sidebar';
 
-import {Sidebar, Tab} from '@dots-java/adapters/react/sidebarWidget';
-
-export default withRouter(connect(connector, null)(sidebar({
-    Sidebar,
-    Tab
-})));
+export default withRouter(sidebar({
+    E2Sidebar,
+    Tab: E2Sidebar.Tab
+}));

@@ -1,10 +1,17 @@
 /* eslint-disable id-length*/
 import Test from 'ava';
-import reducer from '../reducer';
+import Reducer from '../reducer';
 
 Test(`
-    Стор должен содержать часть context
+    Инициализация
 `, t => {
     t.plan(1);
-    t.assert(reducer(undefined, {}).context);
+    t.deepEqual(Reducer(undefined, {}), {});
+});
+Test(`
+    Фоллбек в текущий стейт
+`, t => {
+    t.plan(1);
+    const state = Symbol('state');
+    t.is(Reducer(state, {}), state);
 });

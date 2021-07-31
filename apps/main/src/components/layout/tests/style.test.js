@@ -1,9 +1,9 @@
 /* eslint-disable id-length*/
 import Test from 'ava';
-import style from '../style.js';
+import style from '../styles';
 
 Test(`
-    Стили не изменились
+    Стили основного лейаута не изменились
 `, t => {
     t.plan(1);
     t.snapshot(style);
