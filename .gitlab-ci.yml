@@ -8,6 +8,7 @@ eslint:
   script:
     - curl -o-  https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
     - nvm install $NODE_VERSION
+    - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     - cd apps/main
     - npm install
     - npm run linter
