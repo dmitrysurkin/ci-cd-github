@@ -13,7 +13,6 @@ before_script:
   - cd apps/main
   - npm ci --cache node_modules --prefer-offline
 
-
 eslint:
   image: node:14.17.0-alpine
   stage: lint
