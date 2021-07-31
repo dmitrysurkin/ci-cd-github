@@ -1,9 +1,9 @@
 name: eslint #Название джобы, оно будет отображено в списке на гитхабе
 
 on: #Правила для работы workflow
-  push: #Когда идёт новый пуш в ветку main
+  push: #Когда идёт новый пуш в ветку master
     branches: [master]
-  pull_request: #Когда добавляется pull_request в ветку main
+  pull_request: #Когда добавляется pull_request в ветку master
     branches: [master]
 
 jobs:
