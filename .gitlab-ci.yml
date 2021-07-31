@@ -3,7 +3,8 @@ stages:
 
 # Надо как то использовать кеш
 before_script:
-  - cd apps/main npm ci --cache node_modules --prefer-offline
+  - cd apps/main
+  - npm ci --cache node_modules --prefer-offline
 
 cache:
   key:
