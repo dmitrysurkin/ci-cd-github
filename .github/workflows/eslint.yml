@@ -8,7 +8,8 @@ on: #Правила для работы workflow
 
 jobs:
   eslint: #Название джобы
-    runs-on: node:14.17.0-alpine #Окружение. Имя докер образа
+    container:
+      image: node:14.17.0-alpine #Окружение. Имя докер образа
     steps: #Шаги
       - uses: actions/checkout@v2 #Какой гитхаб экшен использовать      
       - name: Checkout directory
