@@ -22,9 +22,7 @@ jobs:
           key: ${{ env.cache-name }}
           restore-key:
             ${{ env.cache-name }}
-      - name: Checkout directory
-        run: cd apps/main
       - name: Install Dependencies
-        run: npm install
+        run: cd apps/main && npm install
       - name: Lint source code with eslint
-        run: npm run linter
+        run: cd apps/main && npm run linter
