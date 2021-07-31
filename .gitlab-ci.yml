@@ -5,10 +5,11 @@ eslint:
   stage: lint
   variables:
     NODE_VERSION: 14.17.0
+    NVM_DIR: "$HOME/.nvm"
   script:
     - curl -o-  https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-    - nvm install $NODE_VERSION
-    - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    - export NVM_DIR="$HOME/.nvm" && . "NVM_DIR/nvm.sh" --no-uses
+    - eval "[ -f .nvmrc] && nvm install"
     - cd apps/main
     - npm install
     - npm run linter
