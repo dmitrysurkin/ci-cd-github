@@ -5,7 +5,7 @@ cache:
   key:
     files:
       - package-lock.json #При изменения в этом файле будет создаваться заново кеш
-  path:
+  paths:
     - apps/main/node_modules #Какой путь кешировать
 
 before_script: # Надо как то использовать кеш
