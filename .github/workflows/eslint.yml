@@ -18,10 +18,9 @@ jobs:
         env:
           cache-name: npm-${{ hashFiles('package-lock.json') }}
         with:
-          path: apps/main
+          path: apps/main/node_modules
           key: ${{ env.cache-name }}
-          restore-key:
-            ${{ env.cache-name }}
+          restore-key: ${{ env.cache-name }}
       - name: Install Dependencies
         run: cd apps/main && npm install
       - name: Lint source code with eslint
